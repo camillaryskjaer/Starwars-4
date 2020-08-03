@@ -98,18 +98,18 @@ namespace Starwars
             Console.WriteLine();
 
             // Opgave 14
-            // Planet Dagobah has terrain as "swamp" instead of "swamps"
             List<Planet> opgave14 = planets.Where(planet => planet.Terrain != null && (planet.Terrain.Contains("swamps") || planet.Terrain.Contains("swamp"))).OrderBy(planet => planet.RotationPeriod).ThenBy(planet => planet.Name).ToList();
             opgave14.ForEach(planet => Console.WriteLine(planet.Name));
             Console.WriteLine();
 
             // Opgave 15
-            Regex double_vowels = new Regex("(aa|ee|ii|oo|uu)");
+            Regex double_vowels = new Regex("(aa|ee|ii|oo|uu)"); // each group contains a "double vowel"
             List<Planet> opgave15 = planets.Where(planet => double_vowels.IsMatch(planet.Name)).ToList();
             opgave15.ForEach(planet => Console.WriteLine(planet.Name));
             Console.WriteLine();
 
             // Opgave 16
+            // "Ord Mantell" is missing from the correct output
             Regex double_consonants = new Regex("(kk|ll|rr|nn)");
             List<Planet> opgave16 = planets.Where(planet => double_consonants.IsMatch(planet.Name)).OrderByDescending(planet => planet.Name).ToList();
             opgave16.ForEach(planet => Console.WriteLine(planet.Name));
