@@ -37,6 +37,9 @@ namespace Starwars
             Console.WriteLine();
 
             // Opgave 3
+            //Det er altid en god ide at lade sine udtryj pakke ind i paranteser
+             List<Planet> opgave3 = planets.Where(planet => (planet.Name.Length > 9) && (planet.Name.Length < 15)).ToList();
+            
             List<Planet> opgave3 = planets.Where(planet => planet.Name.Length > 9 && planet.Name.Length < 15).ToList();
             opgave3.ForEach(planet => Console.WriteLine(planet.Name));
             Console.WriteLine();
@@ -62,6 +65,7 @@ namespace Starwars
             Console.WriteLine();
 
             // Opgave 8
+            //Rigtig fin opstilling, det gør koden læsevenlig
             List<Planet> opgave8 = planets.Where(planet => (planet.RotationPeriod < 30 || planet.SurfaceWater > 50) && planet.Name.Contains("ba"))
                                           .OrderBy(planet => planet.Name)
                                           .ThenBy(planet => planet.SurfaceWater)
